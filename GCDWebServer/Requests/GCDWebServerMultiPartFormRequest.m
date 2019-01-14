@@ -258,7 +258,7 @@ static NSData* _dashNewlineData = nil;
               success = NO;
             }
             _tmpPath = nil;
-          } else {
+          } else if (_controlName) {
             NSData* data = [[NSData alloc] initWithBytes:(void*)dataBytes length:dataLength];
             GCDWebServerMultiPartArgument* argument = [[GCDWebServerMultiPartArgument alloc] initWithControlName:_controlName contentType:_contentType data:data];
             [_arguments addObject:argument];
